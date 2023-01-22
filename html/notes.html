@@ -1,0 +1,187 @@
+一.字符集的意義
+    
+    1. 網頁中特殊意義的字符
+    2. 鍵盤上沒有的字符
+
+
+    寫法規則 () :
+         以&開始
+         以分號(;)結束
+
+==================================
+1. 標記(標籤, 元素, 盒子)
+
+2. 塊級元素, 行內元素, 行塊內元素
+
+    塊級元素:
+    
+        特點:
+                1. 總是在新航開始
+                2. 高度和行高以及內外邊距都是可控制的
+                3. 寬度缺省默認就是100%寬度
+
+        功能: 主要用來搭建網戰架構, 頁面布局, 乘載內容
+
+        div : 架構, 結構
+        p   : 段落
+        h1  : 標題
+        ol  : 有序列表 須配合li
+        ul  : 無序列表 須配合li
+        hr  : 水平線
+        noscript : 瀏覽器禁止JS腳本運行裡面代碼
+        table : 表格 tr 裡面 td
+        form  : 表單
+        pre   : 定義預格式文本
+            ****一般code配合使用
+
+
+****** 規範: 特情況下用特定東西 ******
+
+3.行內元素:
+
+    特點:
+        1. 和其他元素都在一行顯示[不獨佔一樣]
+        2. 高, 行高以及頂部和底部的邊距不可修改的
+        3. 寬度就是它文字的寬度, 不可修改的
+
+    功能: 用戶加強內容顯示, 控制細節
+
+    標籤:
+         span : 文檔中的結
+         a    : 超鏈結, target 默認新頁面
+            <a href="https://www.youtube.com/" target="_blank"></a>
+         code : 代碼文本
+         em   : 文字傾斜, 更加語意強調
+         i    : 文字傾斜
+            使用場警: 字體圖標
+         strong: 文字加粗, 語意強調
+         b     : 文字加粗
+         label : 定義input 標註
+
+4.行內塊元素:
+
+        特點:
+            1. 和其他元素都在一行顯示[不獨佔一行]
+            2. 高, 行高以及頂部和底部的邊距可修改的
+            3. 寬度就是它文字的寬度, 可修改的
+
+        功能: 用戶加強內容顯示, 控制細節
+        
+        元素:
+            input : 定義輸入控件
+
+                type = 'text'  輸入框: 默認新頁面
+                type = 'password' 密碼
+                type = 'checkbox' 複選
+                type = 'radio'    單選
+                type = 'file'     上傳
+                type = 'button'
+                type = 'submit'
+                type = 'reset'
+
+             textarea :  文本域
+             select   :  定義選擇列表
+                        *****配合optioin來使用
+             img : 圖片
+
+html 標籤企業級規範:
+
+
+一、塊級元素與塊級元素平級, 行內元素與行內元素平級
+
+
+    <div><span></span><p></p></div>
+    //span是行內元素, p是塊級元素, 所以這個是錯誤的崁套
+
+    <div><span></span><a href=""></a></div>
+    //對的
+
+
+二、 塊元素可以包含行內元素或某些塊元素, 但行內元素不能包含塊元素
+     它只能包含其它的內聯元素
+
+
+     <div>
+        <span></span>
+     </div>
+
+     <span>
+        <span></span>
+     </span>
+
+三、有幾個特殊塊級元素只能包含行內元素，不能再包含塊級元素
+
+     h1~h6, p, dt
+
+
+四、塊級元素不能放在標籤p裡面
+
+
+
+五、li標籤可以包含div標籤, 因為li和 div 標籤都是裝載內容的容器
+
+
+CSS
+
+一、 CSS 是甚麼? 
+
+    層疊樣式表 (Cascading Style Sheets)
+
+二、 CSS 可以幹甚麼
+     
+     簡單來說就是修飾網頁
+
+三、 引入方式
+
+     1、行內樣式:
+         
+        格式:
+         <div style = 'background:red;'>  </div>
+
+        格式:
+         <style type="text/css">
+
+         </style>
+     2、嵌入式:
+         格式:
+            <style type ="text/css">
+                div{
+                    background: red;
+                }
+
+                span{
+                    background: red;
+                }
+
+                input{
+                    background: red;
+                }
+            </style>
+         位置: head中寫入
+
+     3、鏈接式:
+
+         位置: head中寫入, 不限制次數
+         標籤: link : 定義文檔與外部資源的關係
+         格式: 
+<link rel="stylesheet" type = "text/css" href="">
+
+            ***rel : 規定當前文檔與被鏈接文檔之間的關係
+
+     4、導入式:
+         格式: @import url{'style.css'}
+         
+         index.html
+         
+Css選擇器-元素選擇器:
+
+有哪些
+
+            *       通配選擇器  選擇所有的元素
+                    使用場景
+
+            element 元素選擇器  選擇所有div or p or *號是全部
+
+            #id     id選擇器    選擇元素id屬性質為id的元素
+
+            .class  class選擇器 選擇元素class屬性為.class的元素
