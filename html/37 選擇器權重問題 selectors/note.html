@@ -1,0 +1,21 @@
+一、選擇器的權重大小 selectors
+
+
+        !important > 行內 > id > class > 標籤(tag) > *(通配)
+
+二、如何計算 how to calculate the weight?
+
+        !important              : 無窮大
+        行內                    : 1000
+        id                      : 100
+        class|屬性|偽類          : 10
+        標籤                    : 1
+        *(通配)                 : 0
+
+example:
+
+        .g-container div ===> class + 標籤 = 11
+
+        div #gPic        ===> 標籤 + id = 101
+
+**********選擇器相同情況下 後者覆蓋前者

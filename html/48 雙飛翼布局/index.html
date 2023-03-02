@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* 左中右布局佔滿屏幕
+        左右各200px, 中間自適應
+        先加載中間塊 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .g-container > div{
+            float: left;
+        }
+        .left{
+            margin-left: -100%;
+            width: 200px;
+            background: red;
+        }
+        .g-main{
+            width: 100%;
+        }
+        .g-content{
+            margin: 0 200px;
+            background: #000;
+            color:#fff
+        }
+        .right{
+            margin-left: -200px;
+            width: 200px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class = 'g-container'>    
+        <div class = 'g-main'>
+            <div class="g-content">中間</div>
+        </div>
+        <div class="left">左</div>
+        <div class="right">右</div>
+    </div>
+</body>
+</html>

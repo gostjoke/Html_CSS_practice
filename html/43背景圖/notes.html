@@ -1,0 +1,35 @@
+1. 背景色 : background-color
+
+    background: red;
+    background: #f00;
+
+2. 背景圖 : background-image
+
+    background: url('xxx.png')
+
+    a. 規定如何重複背景圖像
+        
+        background-repeat: repeat-x  : 橫向
+                           repeat-y  : 縱向
+                           no-repeat : 不重複
+        w: 180px
+        h: 180px
+
+    b.  背景圖起始位置
+
+        background-position: x y
+        background-position: right [center:默認]
+            ****只設置x方向, y默認走center
+
+        圖像起始位置時: 0,0   居中50%, 右下角100% 100%
+
+    c.  規定背景圖尺寸
+
+            background-size: 關鍵字、百分比、數字
+
+                1、關鍵詞
+                    圖片大於盒子尺寸===> 縮小 [contain]
+                    圖片小於盒子尺寸===> 放大 [cover]
+                2、百分比 : x y
+
+                    ****只設置x方向, 系統自動算y方向比例
